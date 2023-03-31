@@ -1,9 +1,51 @@
-import gsap from 'gsap'
+import gsap from "gsap";
 
-const scrollAnimation = () => {
-  return (
-    <div>scroll-animayion</div>
-  )
-}
+const scrollAnimation = (position, target, onUpdate) => {
+  const tl = gsap.timeline();
 
-export default scrollAnimation
+  tl.to(position, {
+    x: 3.38,
+    y: -10.74,
+    z: -5.93,
+    scrollTrigger: {
+      trigger: ".sound-section",
+      start: "top bottom",
+      end: "top top",
+      scrub: 2,
+      immediateRender: false,
+    },
+    onUpdate,
+  })
+    .to(target, {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".sound-section",
+        start: "top bottom",
+        end: "top top",
+        scrub: 2,
+        immediateRender: false,
+      },
+    })
+    .to(".jumbotron-section", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".sound-section",
+        start: "top bottom",
+        end: "top top",
+        scrub: 2,
+        immediateRender: false,
+      },
+    })
+    .to(".sound-section-content", {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".sound-section",
+        start: "top bottom",
+        end: "top top",
+        scrub: 2,
+        immediateRender: false,
+      },
+    });
+};
+
+export default scrollAnimation;
