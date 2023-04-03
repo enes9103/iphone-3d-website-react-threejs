@@ -4,7 +4,7 @@ const scrollAnimation = (position, target, isMobile, onUpdate) => {
   const tl = gsap.timeline();
 
   tl.to(position, {
-    x: !isMobile ? 3.38 : -7.0,
+    x: !isMobile ? -3.38 : -7.0,
     y: !isMobile ? -10.74 : -12.2,
     z: !isMobile ? -5.93 : -6.0,
     scrollTrigger: {
