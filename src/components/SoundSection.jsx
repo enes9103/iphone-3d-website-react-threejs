@@ -1,7 +1,6 @@
 import React from "react";
 
 function SoundSection() {
-
   const handleLearnMore = () => {
     const element = document.querySelector(".display-section");
     window.scrollTo({
